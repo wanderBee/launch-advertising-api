@@ -1,6 +1,7 @@
 'use strict';
 
 const swagger = require('fastify-swagger');
+const config = require('../../config')[process.env.NODE_ENV];
 
 const install = server => {
     server.register(swagger, {
@@ -16,7 +17,7 @@ const install = server => {
                 url: 'https://swagger.io',
                 description: '了解swagger'
             },
-            host: 'localhost:3000',
+            host: config.host + ':' + config.port,
             schemes: ['http'],
             consumes: ['application/json'],
             produces: ['application/json'],
