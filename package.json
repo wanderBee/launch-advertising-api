@@ -27,6 +27,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "codecov": "^3.0.2",
+    "cross-env": "^5.2.0",
     "hotnode": "0.0.8",
     "mocha": "^5.2.0",
     "supertest": "^3.1.0",
