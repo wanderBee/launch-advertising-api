@@ -7,7 +7,7 @@ base.addPath(__dirname);
 
 const app = server();
 
-app.listen(config.port, config.host, (err) => {
+app.listen(config.port, '0.0.0.0', (err) => {
     if (err) throw err;
     log('> server listening on on %o:%o', app.server.address().address, app.server.address().port);
 });

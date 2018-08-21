@@ -4,7 +4,7 @@ const devConfig = {
 };
 
 const proConfig = {
-    host: 'http://120.79.216.186',
+    host: '120.79.216.186',
     port: '3030'
 }
 
