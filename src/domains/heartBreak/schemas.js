@@ -11,7 +11,7 @@ module.exports = {
     },
     swagger: {
         description: 'the first api for test',
-        tags: ['健康测试'],
+        tags: ['心跳检测'],
         response: {
             200: {
                 type: 'object',

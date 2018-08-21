@@ -22,7 +22,7 @@ const install = server => {
             consumes: ['application/json'],
             produces: ['application/json'],
             tags: [
-                { name: '健康测试', description: '获取健康信息' }
+                { name: '心跳检测', description: '和服务器保持联系' }
             ]
             // securityDefinitions: {
             //     apiKey: {

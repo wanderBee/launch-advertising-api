@@ -6,7 +6,7 @@ const schemas = require('./schemas');
 const routes = [
     {
         method: 'get',
-        path: '/healthCheck',
+        path: '/heartBreak',
         handler: middleware.simple,
         schema: schemas.swagger
     }
