@@ -12,7 +12,6 @@ const createToken = req => {
         expiresIn: Math.floor(Date.now() / 1000) + 24 * 60 * 60 // 一天
     });
 
-    console.log('token', token);
     return token;
 };
 

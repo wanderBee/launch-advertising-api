@@ -4,7 +4,6 @@ const checkauth = function(req, reply, next) {
     try {
         const loggedUser = getUserFromHeader(req);
 
-        console.log('======== checkauth =======');
         if (!loggedUser) {
             reply.code(401).send('401 Authorization!');
         }

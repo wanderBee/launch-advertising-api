@@ -32,8 +32,6 @@ const parseRoutesToRows = routes => {
  */
 const displayRoutes = routes => {
   const rows = parseRoutesToRows(routes)
-
-  console.log(table(rows))
 }
 
 module.exports = displayRoutes
