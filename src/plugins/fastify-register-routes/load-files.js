@@ -43,9 +43,17 @@ const loadRoutesByPath = (dirName, opts) => {
  * @return {Array<Function>}   array of middlewares
  */
 const loadMiddlewaresbyPath = (dirName, opts) => {
-    let middlewares = [];
-    while (/\\/.test(dirName) && !isDir.sync(path.join(dirName, 'middlewares'))) {
-        dirName = dirName.substring(0, dirName.lastIndexOf('\\'));
+    let middlewares = [],
+        pathSplit = '/',
+        pathSplitReg = /\//;
+
+    if (/\\/.test(dirName)) {
+        pathSplit = '\\';
+        pathSplitReg = /\\/;
+    }
+
+    while (pathSplitReg.test(dirName) && !isDir.sync(path.join(dirName, 'middlewares'))) {
+        dirName = dirName.substring(0, dirName.lastIndexOf(pathSplit));
     }
     if (isDir.sync(path.join(dirName, 'middlewares'))) {
         middlewares = filterFiles.sync(path.join(dirName, 'middlewares')).map(require);
