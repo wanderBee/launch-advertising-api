@@ -5,10 +5,10 @@ const checkauth = function(req, reply, next) {
         const loggedUser = getUserFromHeader(req);
 
         if (!loggedUser) {
-            reply.code(401).send('401 Authorization!');
+            reply.code(401).send('401 Unauthorized!');
         }
     } catch (e) {
-        reply.code(401).send('401 Authorization!');
+        reply.code(401).send('401 Unauthorized!');
     }
 };
 
