@@ -1,18 +1,14 @@
 'use strict';
 
+const logger = require('../logger');
 const fastify = require('fastify')({
-    // logger: true
+    // logger
 });
 
-const { installPlugins } = require('./plugins');
+const { installPlugins } = require('../plugins');
 
 const server = () => {
     installPlugins(fastify);
-
-    fastify.ready(err => {
-        if (err) throw err;
-    });
-
     return fastify;
 };
 

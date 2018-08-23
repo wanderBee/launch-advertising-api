@@ -3,7 +3,7 @@ const	request = require('supertest');
 const path = require('path');
 const buildFastify = require(path.resolve('src/index'));
 
-tap.test('GET `/healthCheck` route', async (t) => {
+tap.test('POST `/authenticate` route', async (t) => {
 	const fastify = buildFastify();
 
 	t.tearDown(() => fastify.close());
@@ -11,7 +11,8 @@ tap.test('GET `/healthCheck` route', async (t) => {
 	await fastify.ready();
 
 	const response = await request(fastify.server)
-		.get('/healthCheck')
+        .post('/v1/authenticate')
+        .send({ name: 'joy'})
 		.expect(200)
 		.expect('Content-Type', 'application/json; charset=utf-8');
 	t.match(response.body, { result: 'I am alive!' });

@@ -1,19 +1,20 @@
 require('make-promises-safe'); // installs an 'unhandledRejection' handler
 const server = require('./server');
-const log = require('debug')('APP');
 const base = require('app-module-path');
-const config = require('./config')[process.env.NODE_ENV];
+const config = require('./config');
 base.addPath(__dirname);
 
 const app = server();
 
-app.listen(config.port, '0.0.0.0', (err) => {
+app.ready().then(() => console.log(app.printRoutes()))
+
+app.listen(config.get('port'), config.get('host'), err => {
     if (err) throw err;
-    log('> server listening on on %o:%o', app.server.address().address, app.server.address().port);
+    // app.log.debug('> server listening on on %o:%o', app.server.address().address, app.server.address().port);
 });
 
 const buildFastify = () => {
-	return app;
+    return app;
 };
 
 module.exports = buildFastify;

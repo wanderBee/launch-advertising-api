@@ -1,14 +1,7 @@
-const devConfig = {
-    host: 'localhost',
-    port: '3030'
-};
+const convict = require('convict');
+const schema = require('./schema');
 
-const proConfig = {
-    host: '120.79.216.186',
-    port: '3030'
-}
+const config = convict(schema);
+config.validate({ allowed: 'strict' });
 
-module.exports = {
-    development: devConfig,
-    production: proConfig
-}
+module.exports = config;

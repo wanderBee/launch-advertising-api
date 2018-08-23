@@ -11,12 +11,19 @@ module.exports = {
     },
     swagger: {
         description: 'the first api for test',
-        tags: ['心跳检测'],
+        tags: ['授权校验'],
+        body: {
+            type: 'object',
+            properties: {
+                secret: { type: 'string' }
+            },
+            required: ['secret']
+        },
         response: {
             200: {
                 type: 'object',
                 properties: {
-                    result: { type: 'string' }
+                    Authorization: { type: 'string' }
                 }
             }
         }

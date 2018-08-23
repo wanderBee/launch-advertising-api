@@ -3,7 +3,7 @@
 const plugins = [
 	require('./swagger'),
 	require('./helmet'),
-	require('./logger'),
+	require('./cookie'),
 	require('./routes')
 ];
 
