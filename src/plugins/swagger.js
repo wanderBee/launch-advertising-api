@@ -23,7 +23,8 @@ const install = server => {
             produces: ['application/json'],
             tags: [
                 { name: '授权校验', description: '授权Authorization' },
-                { name: '心跳检测', description: '和服务器保持联系' }
+                { name: '心跳检测', description: '和服务器保持联系' },
+                { name: '基础数据', description: '' }
             ],
             securityDefinitions: {
                 Authorization: {

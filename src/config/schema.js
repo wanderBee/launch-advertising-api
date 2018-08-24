@@ -1,6 +1,7 @@
 module.exports = {
   routePath: 'api',
   secretKey: "launch-jiuzhang-sec",
+  cachCapacity: 20,
   env: {
     doc: 'The application environment',
     format: ['production', 'development'],

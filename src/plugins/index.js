@@ -3,8 +3,10 @@
 const plugins = [
 	require('./swagger'),
 	require('./helmet'),
-	require('./cookie'),
-	require('./routes')
+	require('./decorate'),
+	require('./routes'),
+
+	require('./mock')
 ];
 
 const installPlugins = server => {
