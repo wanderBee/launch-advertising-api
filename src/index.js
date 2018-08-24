@@ -6,11 +6,10 @@ base.addPath(__dirname);
 
 const app = server();
 
-app.ready().then(() => console.log(app.printRoutes()))
+app.ready().then(() => app.log.info(app.printRoutes()))
 
 app.listen(config.get('port'), '0.0.0.0', err => {
     if (err) throw err;
-    console.debug('> server listening on on %o:%o', app.server.address().address, app.server.address().port);
 });
 
 const buildFastify = () => {

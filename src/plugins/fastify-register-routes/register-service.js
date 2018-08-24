@@ -39,6 +39,7 @@ const registerDecorate = (server, routes) => {
     server.addHook('onRequest', (req, reply, next) => {
         if (server.hasRequestDecorator('$service')) {
             next();
+            return;
         }
 
         const { url } = req;

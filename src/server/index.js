@@ -2,7 +2,7 @@
 
 const logger = require('../logger');
 const fastify = require('fastify')({
-    // logger
+    logger
 });
 
 const { installPlugins } = require('../plugins');
