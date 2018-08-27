@@ -10,7 +10,7 @@ module.exports = {
         }
     },
     swagger: {
-        description: '获取区域数据（省、市）',
+        description: '获取广告版位列表信息',
         tags: ['基础数据'],
         response: {
             200: {
@@ -23,18 +23,14 @@ module.exports = {
                         items: {
                             type: 'object',
                             properties: {
-                                value: { type: 'string' },
-                                label: { type: 'string' },
-                                children: {
-                                    type: 'array',
-                                    items: {
-                                        type: 'object',
-                                        properties: {
-                                            value: { type: 'string' },
-                                            label: { type: 'string' }
-                                        }
-                                    }
-                                }
+                                id: { type: 'string' },
+                                device_type: { type: 'string' },
+                                pos_name: { type: 'string' },
+                                pos_remark: { type: 'string' },
+                                image_count: { type: 'integer' },
+                                image_width: { type: 'number' },
+                                image_height: { type: 'number' },
+                                audience: { type: 'string' }
                             }
                         }
                     }

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "dic_type": 3,
+    "dic_value": "1",
+    "dic_remark": "CPC/每次点击付费",
+    "sort_no": 1,
+    "available": 1,
+    "create_by": "wangpf",
+    "create_time": "2018-08-27",
+    "update_by": "",
+    "update_time": ""
+  },
+  {
+    "id": 2,
+    "dic_type": 3,
+    "dic_value": "2",
+    "dic_remark": "CPM/每次曝光付费",
+    "sort_no": 2,
+    "available": 1,
+    "create_by": "wangpf",
+    "create_time": "2018-08-27",
+    "update_by": "",
+    "update_time": ""
+  }
+]
