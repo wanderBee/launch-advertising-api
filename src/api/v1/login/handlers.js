@@ -10,22 +10,21 @@ const simple = (req, reply) => {
 
 const login = async (req, reply) => {
     const { username, password } = req.body;
-    let dd = new Date();
-    dd.setDate(dd.getDate() + 1);
-
-    // 登陸信息返回token
+    // 登录信息返回token
     try {
         let result = await signin(username, password);
         result = JSON.parse(result);
         if (result.code === '0000') {
             setToken(req, result.bo.token);
+            let dd = new Date(result.bo.createTime);
+            dd.setDate(dd.getDate() + 1);
             reply.send({
                 code: result.code,
                 msg: 'Success',
                 data: {
                     authorization: 'Bearer ' + result.bo.token,
                     expires: dd,
-                    username: username
+                    username: result.bo.username
                 }
             });
         } else {

@@ -1,3 +1,4 @@
+var Buffer = require('safe-buffer').Buffer
 function CacheLRU(capacity) {
     /*  利用Buffer写的一个LRU缓存，capacity为缓存容量，为0时不限容量。
         myCache = new CacheLRU(capacity); //构造缓存

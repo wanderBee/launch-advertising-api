@@ -26,8 +26,16 @@ module.exports = {
     level: {
       doc: 'The log level',
       format: ['trace', 'debug', 'info', 'warn', 'error', 'fatal'],
-      default: 'debug',
+      default: 'info',
       env: 'LOGGER_LEVEL'
+    }
+  },
+  proxy: {
+    doc: '设置代理服务器',
+    target: 'http://39.108.139.215:8080',
+    prefix: '/api',
+    pathRewrite: {
+      '^/api': ''
     }
   }
 };

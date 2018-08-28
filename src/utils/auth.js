@@ -25,7 +25,6 @@ const setToken = (req, token) => {
     if (!token) return;
     var in3Minutes = 1 / 480;
     req.cache.put('token', token);
-    console.log('req.cache', req.cache);
 };
 
 const unsetToken = req => {
@@ -47,6 +46,7 @@ const getUserFromHeader = (req, opts) => {
         }
         return true;
     }else {
+        // 解析token校验
         return jwt.verify(token, config.get('secretKey'));
     }
 };

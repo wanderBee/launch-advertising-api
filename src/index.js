@@ -6,7 +6,7 @@ base.addPath(__dirname);
 
 const app = server();
 
-app.ready().then(() => app.log.info(app.printRoutes()))
+// app.ready().then(() => app.log.info(app.printRoutes()))
 
 app.listen(config.get('port'), '0.0.0.0', err => {
     if (err) throw err;

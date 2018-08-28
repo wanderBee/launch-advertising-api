@@ -1,0 +1,57 @@
+[
+  {
+    "id": "golo00001",
+    "pos_id": "1",
+    "adv_name": "创新改变，合作共赢，飞云之上，乘风而起",
+    "delivery_date_type": null,
+    "delivery_begin_date": "2018-09-01",
+    "delivery_end_date": null,
+    "adv_status": 0,
+    "price": "0",
+    "create_time": "2018-08-28"
+  },
+  {
+    "id": "golo00002",
+    "pos_id": "1",
+    "adv_name": "创新改变，合作共赢，飞云之上，乘风而起",
+    "delivery_date_type": null,
+    "delivery_begin_date": "2018-09-01",
+    "delivery_end_date": null,
+    "adv_status": 1,
+    "price": "0",
+    "create_time": "2018-08-28"
+  },
+  {
+    "id": "x43100001",
+    "pos_id": "2",
+    "adv_name": "创新改变，合作共赢，飞云之上，乘风而起",
+    "delivery_date_type": null,
+    "delivery_begin_date": "2018-08-27",
+    "delivery_end_date": null,
+    "adv_status": 2,
+    "price": "10000",
+    "create_time": "2018-08-27"
+  },
+  {
+    "id": "ETC00001",
+    "pos_id": "3",
+    "adv_name": "创新改变，合作共赢，飞云之上，乘风而起",
+    "delivery_date_type": null,
+    "delivery_begin_date": "2018-09-01",
+    "delivery_end_date": null,
+    "adv_status": 3,
+    "price": "10000",
+    "create_time": "2018-08-28"
+  },
+  {
+    "id": "ETC00002",
+    "pos_id": "3",
+    "adv_name": "创新改变，合作共赢，飞云之上，乘风而起",
+    "delivery_date_type": null,
+    "delivery_begin_date": "2018-08-01",
+    "delivery_end_date": "2018-08-28",
+    "adv_status": 4,    
+    "price": "10000",
+    "create_time": "2018-08-01"
+  }
+]

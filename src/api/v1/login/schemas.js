@@ -11,7 +11,7 @@ module.exports = {
     },
     swagger: {
         description: '登陸獲取token',
-        tags: ['用户相关API'],
+        tags: ['注册登录'],
         body: {
             type: 'object',
             properties: {
@@ -26,11 +26,12 @@ module.exports = {
                     code: { type: 'number' },
                     msg: { type: 'string' },
                     data: {
-                        // type: 'object',
-                        // properties: {
-                        //     authorization: { type: 'string' },
-                        //     expires: { type: 'string' }
-                        // }
+                        type: 'object',
+                        properties: {
+                            authorization: { type: 'string' },
+                            expires: { type: 'string' },
+                            username: { type: 'string' }
+                        }
                     }
                 }
             },
