@@ -1,6 +1,6 @@
 const { getUserFromHeader } = require('../utils/auth');
 
-const checkauth = function(req, reply, next) {
+const checkAuth = function(req, reply, next) {
     try {
         const loggedUser = getUserFromHeader(req);
 
@@ -12,4 +12,4 @@ const checkauth = function(req, reply, next) {
     }
 };
 
-module.exports = checkauth;
+module.exports = checkAuth;

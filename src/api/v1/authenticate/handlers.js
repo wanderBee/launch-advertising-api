@@ -7,7 +7,7 @@ const simple = (req, reply) => {
 const swagger = async (req, reply) => {
     if (req.$service) {
         const token = req.$service.createToken(req.body);
-        setToken(reply, token);
+        setToken(req, token);
         reply.send({ Authorization: req.cookies.Authorization });
     } else {
         reply.send({});

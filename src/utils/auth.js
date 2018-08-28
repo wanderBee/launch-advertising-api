@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const config = require('../config');
-const { startsWith } = require('lodash');
+const { startsWith, isEqual } = require('lodash');
 const bearerPrefix = 'Bearer ';
 
 const getQueryParams = () => {
@@ -20,40 +20,39 @@ const extractInfoFromHash = () => {
     };
 };
 
-const setToken = (reply, token) => {
+const setToken = (req, token) => {
     if (process.SERVER_BUILD) return;
     if (!token) return;
     var in3Minutes = 1 / 480;
-    reply.setCookie('Authorization', bearerPrefix + token, {
-        path: '/'
-    });
+    req.cache.put('token', token);
+    console.log('req.cache', req.cache);
 };
 
-const unsetToken = reply => {
+const unsetToken = req => {
     if (process.SERVER_BUILD) return;
-    reply.setCookie('Authorization', null, {
-        path: '/'
-    });
+    req.cache.remove('token');
 };
 
-const getUserFromHeader = req => {
-    if (!req.cookies) return undefined;
+const getUserFromHeader = (req, opts) => {
+    if (!req.headers) return undefined;
     const auth = req.headers.authorization;
     if (!auth || !startsWith(auth, bearerPrefix)) return undefined;
     const token = auth.split(" ")[1];
-    const payload = jwt.verify(token, config.get('secretKey'));
-    return payload;
+
+    opts = opts || {};
+    if(opts.isLocal){    // 取本地缓存校验
+        const localToken = req.cache.get('token');
+        if(!isEqual(token, localToken)) {
+            throw new Error('token is not valid!')
+        }
+    }else {
+        return jwt.verify(token, config.get('secretKey'));
+    }
 };
-
-const setSecret = secret => window.localStorage.setItem('secret', secret);
-
-const checkSecret = secret => window.localStorage.secret === secret;
 
 module.exports = {
     extractInfoFromHash,
     setToken,
     unsetToken,
-    getUserFromHeader,
-    setSecret,
-    checkSecret
+    getUserFromHeader
 };
