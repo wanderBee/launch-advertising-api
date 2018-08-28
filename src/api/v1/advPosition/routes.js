@@ -8,7 +8,7 @@ const routes = [
         method: 'get',
         path: '/v1/advPosition',
         handler: handlers.getAdvPosition,
-        middleware: ['checkauth'],
+        middleware: ['checkAuthLocal'],
         schema: schemas.swagger
     }
 ];

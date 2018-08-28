@@ -43,8 +43,9 @@ const getUserFromHeader = (req, opts) => {
     if(opts.isLocal){    // 取本地缓存校验
         const localToken = req.cache.get('token');
         if(!isEqual(token, localToken)) {
-            throw new Error('token is not valid!')
+            throw new Error('token已过期或未登录，请重新登录!')
         }
+        return true;
     }else {
         return jwt.verify(token, config.get('secretKey'));
     }

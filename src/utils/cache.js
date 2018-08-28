@@ -37,7 +37,7 @@ CacheLRU.prototype.put = function(key, value) {
         lruEntry = this.hash[key];
     }
     refresh(this.linkedList, lruEntry);
-    this.data[key] = new Buffer(JSON.stringify(value));
+    this.data[key] = Buffer.from(JSON.stringify(value));
     if (this.linkedList.length > this.capacity) this.remove(this.linkedList.end.key.slice(1));
     return this;
 };
