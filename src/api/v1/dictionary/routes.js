@@ -8,7 +8,7 @@ const routes = [
         method: 'get',
         path: '/v1/dictionary/:type',
         handler: handlers.getDictionary,
-        // middleware: ['checkauth'],
+        middleware: ['checkauth'],
         schema: schemas.swagger
     }
 ];
