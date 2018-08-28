@@ -26,19 +26,21 @@ module.exports = {
                     code: { type: 'number' },
                     msg: { type: 'string' },
                     data: {
-                        type: 'object',
-                        properties: {
-                            authorization: { type: 'string' },
-                            expires: { type: 'string' }
-                        }
+                        // type: 'object',
+                        // properties: {
+                        //     authorization: { type: 'string' },
+                        //     expires: { type: 'string' }
+                        // }
                     }
                 }
+            },
+            default: {
+                type: 'object',
+                properties: {
+                    code: { type: 'number' },
+                    msg: { type: 'string' }
+                }
             }
-        },
-        security: [
-            {
-                Authorization: []
-            }
-        ]
+        }
     }
 };

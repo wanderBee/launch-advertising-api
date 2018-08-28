@@ -7,7 +7,6 @@ const simple = (req, reply) => {
 };
 
 const login = async (req, reply) => {
-    console.log('req', req);
     const { username, password } =  req.body;
 
     let dd = new Date();
@@ -22,7 +21,7 @@ const login = async (req, reply) => {
                 code: result.code,
                 msg: 'Success',
                 data: {
-                    Authorization: 'Bearer ' + result.bo.token,
+                    authorization: 'Bearer ' + result.bo.token,
                     expires: dd
                 }
             });
