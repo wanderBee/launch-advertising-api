@@ -18,7 +18,6 @@ const getDictionary = async (req, reply) => {
 
         const dicData = _.chain(mockData)
             .filter(dic => {
-                console.log('item', dic);
                 return dic.dic_type == dicType;
             })
             .sortBy('sort_no')

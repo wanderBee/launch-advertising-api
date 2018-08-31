@@ -10,8 +10,14 @@ module.exports = {
         }
     },
     swagger: {
-        description: '获取广告列表信息',
+        description: '根据广告版位获取广告',
         tags: ['基础数据'],
+        params: {
+            type: {
+                type: 'string',
+                description: '版位类型： (golo-home, 1) - golo汽修大师首页、（golo-banner, 2）- golo汽修大师banner'
+            }
+        },
         response: {
             200: {
                 type: 'object',
@@ -23,16 +29,10 @@ module.exports = {
                         items: {
                             type: 'object',
                             properties: {
-                                adv_id: { type: 'integer' },
+                                adv_id: {type: 'integer'},
                                 pos_id: { type: 'integer' },
-                                adv_name: { type: 'string' },
-                                delivery_date_type: { type: 'string' },
-                                delivery_begin_date: { type: 'string' },
-                                delivery_end_date: { type: 'string' },
-                                adv_status: { type: 'integer' },
-                                adv_status_name: { type: 'string' },
-                                price: { type: 'number' },
-                                create_time: { type: 'string' }
+                                image_url: { type: 'string' },
+                                click_url: { type: 'string' }
                             }
                         }
                     }
@@ -46,10 +46,10 @@ module.exports = {
                 }
             }
         },
-        security: [
-            {
-                Authorization: []
-            }
-        ]
+        // security: [
+        //     {
+        //         Authorization: []
+        //     }
+        // ]
     }
 };

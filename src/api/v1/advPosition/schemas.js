@@ -23,7 +23,7 @@ module.exports = {
                         items: {
                             type: 'object',
                             properties: {
-                                id: { type: 'string' },
+                                pos_id: { type: 'integer' },
                                 device_type: { type: 'string' },
                                 pos_name: { type: 'string' },
                                 pos_remark: { type: 'string' },

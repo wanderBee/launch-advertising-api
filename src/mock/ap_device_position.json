@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "pos_id": 1,
     "device_type": "1",
     "pos_name": "golo启动广告",
     "pos_remark": "启动页-单张图",
@@ -10,7 +10,7 @@
     "audience": "技师"
   },
   {
-    "id": 2,
+    "pos_id": 2,
     "device_type": "1",
     "pos_name": "golo-banner",
     "pos_remark": "首页banner-多张图",
@@ -20,7 +20,7 @@
     "audience": "技师"
   },
   {
-    "id": 3,
+    "pos_id": 3,
     "device_type": "2",
     "pos_name": "x431消息广告",
     "pos_remark": "消息弹窗-单张图",
@@ -30,7 +30,7 @@
     "audience": "维修厂"
   },
   {
-    "id": 4,
+    "pos_id": 4,
     "device_type": "3",
     "pos_name": "ETC-APP",
     "pos_remark": "启动页-单张图",
@@ -40,7 +40,7 @@
     "audience": "车主"
   },
   {
-    "id": 5,
+    "pos_id": 5,
     "device_type": "3",
     "pos_name": "ETC终端",
     "pos_remark": "启动页-单张图",

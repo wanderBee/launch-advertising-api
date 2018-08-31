@@ -19,7 +19,7 @@ const install = server => {
             },
             host: config.get('host') + ':' + config.get('port'),
             schemes: ['http'],
-            consumes: ['application/json'],
+            consumes: ['application/json'], 
             produces: ['application/json'],
             tags: [
                 { name: '授权校验', description: '授权Authorization' },
